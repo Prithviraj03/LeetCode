@@ -1,10 +1,13 @@
+from typing import List
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        for i in range(0,len(nums)):
-            for j in range(i+1, len(nums)):
-                total = nums[i] + nums[j]
-
-                if total == target:
-                    return [i,j]
-            
-            
+        seen = {}  # Dictionary to store numbers and their indices
+        for i, num in enumerate(nums):
+            # Calculate the complement
+            complement = target - num
+            # Check if the complement is already in the dictionary
+            if complement in seen:
+                return [seen[complement], i]
+            # Store the index of the current number
+            seen[num] = i
