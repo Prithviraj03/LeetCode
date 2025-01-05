@@ -20,7 +20,7 @@ class Solution:
                 stack.append(mul)
             elif i == '/':
                 div = int(int(stack[-2]) / int(stack[-1]))
-                stack.pop(-2)
+                stack.pop(-1)
                 stack.pop(-1)                
                 stack.append(div)
             else:
