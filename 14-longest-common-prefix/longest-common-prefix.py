@@ -4,7 +4,7 @@ class Solution:
         for i in range(len(strs[0])):
             match = True
             for s in strs:
-                if i >= len(s) or s[i] != strs[0][i] :
+                if i >= len(s) or s[i] != strs[0][i]:
                     match = False
                     break
 
